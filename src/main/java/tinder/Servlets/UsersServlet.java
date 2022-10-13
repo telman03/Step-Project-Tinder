@@ -1,4 +1,4 @@
-package web;
+package tinder.Servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +12,8 @@ import java.util.List;
 
 public class UsersServlet extends HttpServlet {
 
+
+
     // http://localhost:8080/users
     @Override
     protected void doGet(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
@@ -23,6 +25,14 @@ public class UsersServlet extends HttpServlet {
                 w.println(line);
             }
         }
+    }
 
+    @Override
+    protected void doPost(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
+        try(PrintWriter w = rs.getWriter()){
+            String like = rq.getParameter("like");
+            String dislike = rq.getParameter("dislike");
+            w.printf("user entered: %s, %s", like, dislike);
+        }
     }
 }

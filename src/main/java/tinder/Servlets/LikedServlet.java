@@ -1,35 +1,32 @@
 package tinder.Servlets;
 
-import javax.servlet.ServletException;
+import lombok.SneakyThrows;
+
+import tinder.Service.LikeService;
+import tinder.Entity.User;
+import tinder.FreeMarkerTemplate;
+
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-// http://localhost:8080/liked
 public class LikedServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
-        String fileName = getClass().getClassLoader().getResource("like-page.html").getFile();
+    LikeService likeService = new LikeService();
 
-        List<String> lines = Files.readAllLines(Path.of(fileName.substring(1)));
-        try(PrintWriter w = rs.getWriter()){
-            for (String line: lines){
-                w.println(line);
-            }
-        }
-    }
-
+    @SneakyThrows
     @Override
-    protected void doPost(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
-        try (PrintWriter w = rs.getWriter()){
-            String like = rq.getParameter("like");
-            String dislike = rq.getParameter("dislike");
-            w.printf("You %s %s this people", like, dislike);
-        }
+    protected void doGet(HttpServletRequest rq, HttpServletResponse rs){
+        int loggedUser = 1;
+        FreeMarkerTemplate freeMarker = new FreeMarkerTemplate();
+        Map<String, Object> mapper = new HashMap<>();
+        List<User> users = likeService.getAllLikedUsers(loggedUser);
+
+        mapper.put("users", users);
+        freeMarker.render("people-list.ftl", mapper, rs);
     }
 }

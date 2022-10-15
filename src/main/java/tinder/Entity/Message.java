@@ -1,6 +1,8 @@
 package tinder.Entity;
 
-public class Message {
+import lombok.Data;
+
+@Data public class Message {
     private int sender;
     private int receiver;
     private String content;

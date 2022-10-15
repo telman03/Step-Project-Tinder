@@ -1,8 +1,10 @@
 package tinder.Entity;
 
+import lombok.Data;
+
 import java.util.Objects;
 
-public class Like {
+@Data public class Like {
     private int from;
     private int to;
 

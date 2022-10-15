@@ -18,7 +18,7 @@ public class FreeMarkerTemplate {
 
     public FreeMarkerTemplate() throws URISyntaxException, IOException {
         this.configuration = new Configuration(Configuration.VERSION_2_3_28){{
-            String path = Paths.get(FreeMarkerTemplate.class.getResource("/templates").toURI())
+            String path = Paths.get(FreeMarkerTemplate.class.getResource("/").toURI())
                     .toFile().getAbsolutePath();
             setDirectoryForTemplateLoading(new File(path));
             setDefaultEncoding(String.valueOf(StandardCharsets.UTF_8));

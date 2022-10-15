@@ -21,7 +21,6 @@ public class DatabaseConnector {
                 e.printStackTrace();
             }
         }
-
         return connection;
     }
 }

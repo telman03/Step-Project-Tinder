@@ -15,9 +15,8 @@ import java.io.IOException;
 import java.util.List;
 
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 public class UsersServlet extends HttpServlet {
@@ -41,9 +40,9 @@ public class UsersServlet extends HttpServlet {
 
         freeMarker.render("like-page.ftl", mapper, rs);
     }
-
+    @SneakyThrows
     @Override
-    protected void doPost(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest rq, HttpServletResponse rs) {
         String button = rq.getParameter("button");
         int thisUser = 1;
         Like like = new Like(thisUser, userService.getAllUsers().get(counter - 1).getId());

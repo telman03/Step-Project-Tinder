@@ -38,7 +38,7 @@ public class MessageDaoDB implements DAO<Message>{
     @SneakyThrows
     @Override
     public void insert(Message message){
-        String query = "insert into message values (default, ?, ?,?)";
+        String query = "insert into message values (default, ?, ?, ?)";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setInt(1, message.getSender());
         statement.setInt(2, message.getReceiver());

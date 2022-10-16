@@ -2,7 +2,6 @@ package tinder.Service;
 
 import tinder.DAO.*;
 import tinder.Entity.Message;
-
 import java.util.List;
 
 public class MessageService {

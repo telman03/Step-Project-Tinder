@@ -6,7 +6,7 @@ You can find ready HTML templates of all needed pages in the [templates](https:/
 
 #### Teamwork
 
-All students will work on this project in groups of TWO persons. Group members may split the tasks on their own discretion.
+All students will work on this project in groups of TWO persons. Group members may split the tasks on their own discretion. 
 
 ## A list of the working endpoints in a fully finished application:
 - /users

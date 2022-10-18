@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="afternoon-inlet-68717">
+    <output-path>$PROJECT_DIR$/out/artifacts/afternoon_inlet_68717</output-path>
+    <root id="root" />
+  </artifact>
+</component>

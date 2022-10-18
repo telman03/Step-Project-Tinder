@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp ./target/classes:target/deps/* tinder.ServerApp
+web: java $JAVA_OPTS -cp ./target/Step-Project-Tinder-1.0-SNAPSHOT.jar -Dserver.port=$PORT $JAR_OPTS

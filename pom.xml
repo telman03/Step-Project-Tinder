@@ -5,10 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>com.heroku</groupId>
-    <artifactId>webapp-runner</artifactId>
-    <packaging>jar</packaging>
-    <version>9.0.52.1</version>
+    <groupId>tinder</groupId>
+    <artifactId>Step-Project-Tinder</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
@@ -22,7 +21,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.10.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
@@ -34,24 +33,22 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <phase>package</phase>
-                        <goals><goal>copy</goal></goals>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
                         <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.heroku</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>9.0.68.0</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
+                            <outputDirectory>
+                                ${project.build.directory}/deps
+                            </outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
+    <packaging>jar</packaging>
 
 
 

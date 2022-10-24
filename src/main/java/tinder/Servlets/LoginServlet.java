@@ -1,15 +1,13 @@
 package tinder.Servlets;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import tinder.Entity.User;
-
 import lombok.SneakyThrows;
+import tinder.Entity.User;
 import tinder.FreeMarkerTemplate;
 import tinder.Service.LoginService;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -31,4 +29,6 @@ public class LoginServlet extends HttpServlet {
         if(user != null) rs.sendRedirect("/users");
         else rs.sendRedirect("/login");
     }
+
 }
+

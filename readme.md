@@ -1,7 +1,7 @@
 ## The task 
 
 #### Create the MVP of a dating app similar to Tinder 
-
+ 
 You can find ready HTML templates of all needed pages in the [templates](https://github.com/telman03/Step-Project-Tinder/tree/master/src/main/resources) folder.
 
 #### Teamwork

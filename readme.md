@@ -1,4 +1,9 @@
+## Team Members
+- Sabina Mammmadova
+- Telman Gadimov 
+
 ## The task 
+
 
 #### Create the MVP of a dating app similar to Tinder 
  
